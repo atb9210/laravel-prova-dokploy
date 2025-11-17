@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schema.railpack.com",
+  "steps": {
+    "build": {
+      "commands": [
+        "...",
+        { "cmd": "npm ci --include=dev", "customName": "Install dev deps (vite)" },
+        { "cmd": "npm run build", "customName": "Vite build" },
+        { "cmd": "php artisan config:cache", "customName": "Cache config" },
+        { "cmd": "php artisan route:cache", "customName": "Cache routes" },
+        { "cmd": "php artisan view:cache", "customName": "Cache views" }
+      ]
+    }
+  }
+}
