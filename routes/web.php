@@ -19,6 +19,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/queue-test', [QueueTestController::class, 'index'])->name('queue-test.index');
     Route::post('/queue-test', [QueueTestController::class, 'dispatch'])->name('queue-test.dispatch');
+    Route::post('/queue-test/run-schedule', [QueueTestController::class, 'runSchedule'])->name('queue-test.run-schedule');
 });
 
 require __DIR__.'/auth.php';
